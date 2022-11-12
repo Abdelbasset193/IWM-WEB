@@ -1,8 +1,13 @@
 ****************** IWM :Licence PRO Ingénierie web et Mobile ensa BERRECHID *****************
 ****************** START ************
 pour exécuter le projet il y a lieu : 
+0- 
 1- installer nodejs
 2- lancer les commandes : 
-npm install -D tailwindcss
+
+    $cd Saving_calculator 
+    
+    $npm install -D tailwindcss
+    
 ****************ENJOY****************
 ****************END****************** 
