@@ -1,0 +1,124 @@
+
+*{
+    text-align: center;
+}
+/* titles  */
+.title1{
+    font-family: cursive;
+    text-align: center;
+    font-size: 62px;
+    margin-top: -15px;
+    margin-bottom: -20px;
+}
+
+.title2{
+    color: rgb(224, 218, 218);
+    text-align: center;
+    font-size: 16px;
+    font-style:normal;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+
+
+}
+
+/* tible */
+.table {
+    width: 95%;  
+    margin-top: 50px;
+    margin-bottom: 10px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
+
+
+
+  .menu-recette {
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+  }
+.menu-recette .col1{
+    width: 40%;
+    text-align: left;
+
+}
+.menu-recette .col2{
+    width: 10%;
+
+}
+.menu-recette .col3{
+    width: 40%;
+    text-align: left;
+}
+.menu-recette .col4{
+    width: 10%;
+
+}
+
+.menu-ingredian{
+    color: lightgray;
+    font-size: 12px;
+    font-weight: bold;
+   
+}
+.menu-ingredian .col2-1{
+    width: 40%;
+    text-align: left;
+    padding-bottom: 30px;
+}
+.menu-ingredian .col2-2{
+    width: 10%;
+    padding-bottom: 30px;
+}
+.menu-ingredian .col2-3{
+    width: 40%;
+    text-align: left;
+    padding-bottom: 30px;
+}
+.menu-ingredian .col2-4{
+    width: 10%;
+    padding-bottom: 30px;
+
+}
+.tag{
+    background-color: rgb(199, 148, 66 ,0.2) !important;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-style: italic;
+    color: rgb(201, 103, 43);
+    font-size: 10px;
+}
+
+.tag2{
+    background-color: rgb(199, 148, 66 ,0.2) !important;
+    padding: 3px;
+    margin-right: 50px;
+    font-style: italic;
+    color: rgb(201, 103, 43);
+    font-size: 10px;
+}
+
+
+  /* button  */
+  .veiw-menu
+  {
+    margin: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .veiw-menu:hover
+  {
+
+    color: white;
+    background-color: orange;
+    border: 1px none ;
+  }
