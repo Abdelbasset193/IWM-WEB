@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./dist/style.css" rel="stylesheet">
   <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+  <script src="./src/code.js"></script>
+
   <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
 
 
@@ -20,9 +22,9 @@
   </h2>
   <div class="min-h-screen grid grid-cols-2 bg-byad  m-xl  rounded-3xl shadow-xl  overflow-hidden">
       <div class="flex flex-col justify-center items-center border-r-2	border-white	border-double">
-        <div class="p-2"> <img  src="./assets/images/money_img.svg" width="250" height="250" alt="screenshot" ></div>
+        <div class="p-2"> <img  src="./assets/images/money_img.svg" width="400" height="400" alt="screenshot" ></div>
         <div class="p-2"> <label
-          class="mb-4 text-3xl font-extrabold text-secondary align-middle">
+          class="mb-4 text-3xl font-extrabold text-green-500 align-middle">
           Time is money </label></div>
       </div>
       
@@ -67,9 +69,10 @@
 
 
     </ul>
+
     
-      <form class="bg-primary p-xl shadow-inner outline-none ">
-        <div class="grid overflow-hidden grid-cols-2 gap-2">
+      <form class=" p-xl shadow-inner outline-none " action="/" method="get">
+        <div class="grid overflow-hidden grid-cols-10 gap-2 shadow-sm p-xl  ">
           <div class="col-span-2"> <div class="text-center mb-10">
             <label class=" text-2xl text-center text-limouni">Calculate the accumulated amount</label>
             <br/>
@@ -85,7 +88,7 @@
             <label for="" class="text-xs font-normal px-1">Currency </label>
           </div>
           <div class="box">
-            <input type="text"
+            <input id="salary" type="text"
             class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg shadow-inner outline-none focus:border-indigo-500"
             placeholder="5000"/>
 
@@ -93,7 +96,7 @@
           <div class="box">
 
 <!-- Dropdown menu -->
-<select id="currency" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+<select id="currency" class="bg-gray-50 border-solid border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
   <option value="dh">MAD</option>
   <option value="EUR">EURO</option>
   <option value="$">DOLLAR</option>
@@ -184,7 +187,7 @@
           </div>
           <div class="box">
 
-            <input type="text"
+            <input id="startAge" type="text"
             class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg shadow-inner
 
             outline-none focus:border-indigo-500"
@@ -195,6 +198,7 @@
           </div>
           <div class="box">
             <input type="text"
+            id="ageEnd"
             class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg shadow-inner
 
             outline-none focus:border-indigo-500"
@@ -202,8 +206,17 @@
           </div>
           <div class="col-span-2 text-center">
 
-            <button type="button" class="text-white bg-secondary hover:bg-byad focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 text-alig">Green</button>
-
+            <button type="button" id="submit" onclick="checkthis()" class="m-xl text-white w-64 bg-green-500 hover:bg-byad focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 text-alig">
+              Calculate
+            </button>
+<br />
+            <div  class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+              <strong id="error"  class="font-bold">Holy smokes!</strong>
+              <span id="error"  class="block sm:inline">Something seriously bad happened.</span>
+              <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+              </span>
+            </div>
           </div>
         </div>
 
