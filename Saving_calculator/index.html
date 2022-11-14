@@ -1,19 +1,355 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./dist/style.css" rel="stylesheet">
-</head>
-<body>
-  <h1 class="text-3xl font-bold underline text-center">
-    Hello world!
-  </h1>
+  <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
 
-  <div class="container mx-auto">
-    <!-- ... -->
+
+</head>
+
+<body class="h-screen bg-primary">
+  <h1 class="text-3xl text-title font-bold  text-center  mt-xl">
+    Savings Calculator
+  </h1>
+  <h2 class="text-center text-title m-lg">
+    Estimate your investment growth over time
+  </h2>
+  <div class="min-h-screen grid grid-cols-2 bg-byad  m-xl  rounded-3xl shadow-xl  overflow-hidden">
+      <div class="flex flex-col justify-center items-center border-r-2	border-white	border-double">
+        <div class="p-2"> <img  src="./assets/images/money_img.svg" width="250" height="250" alt="screenshot" ></div>
+        <div class="p-2"> <label
+          class="mb-4 text-3xl font-extrabold text-secondary align-middle">
+          Time is money </label></div>
+      </div>
+      
+    <div class="flex flex-col justify-center items-start">
+
+
+      <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+        <li class="">
+            <a href="#" class="inline-block py-3 px-4 text-white bg-green-500  active" aria-current="page">
+              
+              <label for="" class="text-xs font-bold px-2">
+                Accumulated
+                </label>
+<br />
+              <label for="" class="text-xs font-normal px-1">
+                % of saving 
+                </label>
+            </a>
+        </li>
+        <li class="">
+          <a href="#" class="inline-block py-3 px-4  hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white">
+              
+              <label for="" class="text-xs font-bold px-2">
+                Accumulated
+                </label>
+<br />
+              <label for="" class="text-xs font-normal px-1">
+                % of saving 
+                </label>
+            </a>
+        </li>
+        <li class="">
+            <a href="#" class="inline-block py-3 px-4  hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white">
+              <label for="" class="text-xs font-bold px-2">
+                Accumulated
+                </label>
+<br />
+              <label for="" class="text-xs font-normal px-1">
+                % of saving 
+                </label>            </a>
+        </li>
+
+
+    </ul>
+    
+      <form class="bg-primary p-xl shadow-inner outline-none ">
+        <div class="grid overflow-hidden grid-cols-2 gap-2">
+          <div class="col-span-2"> <div class="text-center mb-10">
+            <label class=" text-2xl text-center text-limouni">Calculate the accumulated amount</label>
+            <br/>
+            <label class="text-center text-2xl text-limouni">From saving : </label>
+          </div>
+        </div>
+
+  
+          <div class="box">
+            <label for="" class="text-xs font-normal px-1">Your First Salary </label>
+          </div>
+          <div class="box">
+            <label for="" class="text-xs font-normal px-1">Currency </label>
+          </div>
+          <div class="box">
+            <input type="text"
+            class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg shadow-inner outline-none focus:border-indigo-500"
+            placeholder="5000"/>
+
+          </div>
+          <div class="box">
+
+<!-- Dropdown menu -->
+<select id="currency" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+  <option value="dh">MAD</option>
+  <option value="EUR">EURO</option>
+  <option value="$">DOLLAR</option>
+
+
+</select>
+
+          </div>
+
+          <div class="box">
+            <label for="" class="text-xs font-normal px-1">
+              % of saving 
+              </label>
+          </div>
+          <div class="box">
+            <label for="" class="text-xs font-normal px-1">
+              % of raise of salary
+            </label>
+          </div>
+
+          <div class="box">
+            <!-- Dropdown menu -->
+<select id="percentage_saving" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+  <option value="5">5%</option>
+  <option value="10">10%</option>
+  <option value="15">15%</option>
+  <option value="20">20%</option>
+  <option value="25">25%</option>
+  <option value="30">30%</option>
+  <option value="35">35%</option>
+  <option value="40">40%</option>
+  <option value="45">45%</option>
+  <option value="50">50%</option>
+  <option value="55">55%</option>
+  <option value="60">60%</option>
+  <option value="65">65%</option>
+  <option value="70">70%</option>
+  <option value="75">75%</option>
+  <option value="80">80%</option>
+  <option value="85">85%</option>
+  <option value="90">90%</option>
+  <option value="95">95%</option>
+  <option value="100">100%</option>
+
+
+
+</select>
+          </div>
+          <div class="box">
+            <!-- Dropdown menu -->
+<select id="percentage_raise" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+  <option value="5">5%</option>
+  <option value="10">10%</option>
+  <option value="15">15%</option>
+  <option value="20">20%</option>
+  <option value="25">25%</option>
+  <option value="30">30%</option>
+  <option value="35">35%</option>
+  <option value="40">40%</option>
+  <option value="45">45%</option>
+  <option value="50">50%</option>
+  <option value="55">55%</option>
+  <option value="60">60%</option>
+  <option value="65">65%</option>
+  <option value="70">70%</option>
+  <option value="75">75%</option>
+  <option value="80">80%</option>
+  <option value="85">85%</option>
+  <option value="90">90%</option>
+  <option value="95">95%</option>
+  <option value="100">100%</option>
+
+
+
+</select>
+          </div>
+
+          <div class="box">
+
+            <label for="" class="text-xs font-normal px-1">
+              Age of Start
+            </label>
+          </div>
+          <div class="box">
+            <label for="" class="text-xs font-normal px-1">
+              Age of End
+            </label>
+          </div>
+          <div class="box">
+
+            <input type="text"
+            class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg shadow-inner
+
+            outline-none focus:border-indigo-500"
+            placeholder="25"/>
+
+          
+
+          </div>
+          <div class="box">
+            <input type="text"
+            class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg shadow-inner
+
+            outline-none focus:border-indigo-500"
+            placeholder="45"/>
+          </div>
+          <div class="col-span-2 text-center">
+
+            <button type="button" class="text-white bg-secondary hover:bg-byad focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 text-alig">Green</button>
+
+          </div>
+        </div>
+
+        </form>
+
+      <!--Formulaire -->
+
+      
+
+    </div>
   </div>
+
+  <!--
+  <div class="min-w-screen min-h-screen  flex  justify-center px-5 py-5">
+    <div class="text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden" style="max-width:1000px">
+      <div class="md:flex w-full bg-byad"> 
+        <div class=" md:block w-1/2 bg-indigo-500 py-10 px-10 items-center">
+          <object class="py-4" data="./assets/images/money_img.svg" width="250" height="250"> </object>
+          <label
+            class="mb-4 text-1xl font-extrabold text-secondary dark:text-white md:text-3xl lg:text-4xl text-center">
+            Time is money </label>
+
   
+
+        </div>
+        <div class="w-full md:w-1/2 py-10 px-5 md:px-10">
+          <div class="text-center mb-10">
+            <p class="text-left text-limouni">Calculate the accumulated amount</p>
+            <p class="text-left  text-limouni">From saving</p>
+
+          </div>
+          <div>
+
+          
+
+            <div class="flex -mx-3 bg-title" >
+              <div class="w-1/2 px-3 mb-5">
+                <label for="" class="text-xs font-normal px-1">Your First Salary </label>
+                <div class="flex">
+                  <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center"><i
+                      class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                  <input type="text"
+                    class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg shadow-inner
+
+                    outline-none focus:border-indigo-500"
+                    placeholder="5000">
+                </div>
+              </div>
+              <div class="w-1/2 px-3 mb-5">
+                <label for="" class="text-xs font-normal px-1">Curency</label>
+                <div class="flex">
+                  <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i
+                      class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+
+                      <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown divider <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+
+                    
+                      <div id="dropdownDivider" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 110px, 0px);">
+                          <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
+                            <li>
+                              <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                            </li>
+                            <li>
+                              <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                            </li>
+                            <li>
+                              <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                            </li>
+                          </ul>
+                          <div class="py-1">
+                            <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Separated link</a>
+                          </div>
+                      </div>
+                      
+                </div>
+              </div>
+            </div>
+
+            <div class="flex -mx-3">
+              <div class="w-1/2 px-3 mb-5">
+                <label for="" class="text-xs font-normal px-1">% of saving</label>
+                <div class="flex">
+                  <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
+
+                    <i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                  <input type="text"
+                    class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg  outline-none focus:border-indigo-500"
+                    placeholder="John">
+                </div>
+              </div>
+              <div class="w-1/2 px-3 mb-5">
+                <label for="" class="text-xs font-normal px-1">% of raise of salary</label>
+                <div class="flex">
+                  <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i
+                      class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                  <input type="email"
+                    class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                    placeholder="johnsmith@example.com">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="flex -mx-3">
+              <div class="w-1/2 px-3 mb-5">
+                <label for="" class="text-xs font-normal px-1">Age of Start</label>
+                <div class="flex">
+                  <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i
+                      class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                      <input type="text"
+                      class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg shadow-inner
   
+                      outline-none focus:border-indigo-500"
+                      placeholder="24">
+                </div>
+              </div>
+              <div class="w-1/2 px-3 mb-5">
+                <label for="" class="text-xs font-normal px-1">Age of end</label>
+                <div class="flex">
+                  <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i
+                      class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                      <input type="text"
+                      class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg shadow-inner
+  
+                      outline-none focus:border-indigo-500"
+                      placeholder="45">
+                </div>
+              </div>
+            </div>
+
+            <div class="flex -mx-3">
+              <div class="w-full px-3 mb-5">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                  Button
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+-->
+
 </body>
+
 </html>
