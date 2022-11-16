@@ -18,14 +18,14 @@ module.exports = {
     margin:{
      'sm' : '8px',
      'md': '16px',
-       'lg': '24px',
-       'xl': '48px',
+      'lg': '24px',
+      'xl': '48px',
     },
     padding:{
       'sm' : '8px',
       'md': '16px',
-        'lg': '24px',
-        'xl': '48px',
+      'lg': '24px',
+       'xl': '48px',
      }
   },
   plugins: [

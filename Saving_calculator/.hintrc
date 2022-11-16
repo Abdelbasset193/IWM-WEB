@@ -8,6 +8,12 @@
       {
         "object-alt": "off"
       }
+    ],
+    "axe/forms": [
+      "default",
+      {
+        "select-name": "off"
+      }
     ]
   }
 }

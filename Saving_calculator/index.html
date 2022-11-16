@@ -31,10 +31,10 @@
     <div class="flex flex-col justify-center items-start">
 
 
-      <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400">
-        <li class="">
+      <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400" onclick="balanceTab1()">
+        <li class="" id="tab-1">
             <a href="#" class="inline-block py-3 px-4 text-white bg-green-500  active" aria-current="page">
-              
+               
               <label for="" class="text-xs font-bold px-2">
                 Accumulated
                 </label>
@@ -44,7 +44,7 @@
                 </label>
             </a>
         </li>
-        <li class="">
+        <li class="" id="tab-2">
           <a href="#" class="inline-block py-3 px-4  hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white">
               
               <label for="" class="text-xs font-bold px-2">
@@ -56,23 +56,24 @@
                 </label>
             </a>
         </li>
-        <li class="">
-            <a href="#" class="inline-block py-3 px-4  hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white">
+        <li class="" id="tab-3">
+            <a id="btn_tab3" class="inline-block py-3 px-4  hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white">
               <label for="" class="text-xs font-bold px-2">
                 Accumulated
                 </label>
 <br />
               <label for="" class="text-xs font-normal px-1">
                 % of saving 
-                </label>            </a>
+                </label>       
+             </a>
         </li>
 
 
     </ul>
 
     
-      <form class=" p-xl shadow-inner outline-none " action="/" method="get">
-        <div class="grid overflow-hidden grid-cols-10 gap-2 shadow-sm p-xl  ">
+      <form class="p-xl shadow-inner outline-none"  id="form-id" name="form-exe1" onsubmit="validateform()" method="GET">
+        <div class="grid overflow-hidden grid-cols-10 gap-2 shadow-sm ">
           <div class="col-span-2"> <div class="text-center mb-10">
             <label class=" text-2xl text-center text-limouni">Calculate the accumulated amount</label>
             <br/>
@@ -88,14 +89,13 @@
             <label for="" class="text-xs font-normal px-1">Currency </label>
           </div>
           <div class="box">
-            <input id="salary" type="text"
+            <input id="salary" type="text" name="salary" value="10000"
             class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg shadow-inner outline-none focus:border-indigo-500"
             placeholder="5000"/>
 
           </div>
           <div class="box">
 
-<!-- Dropdown menu -->
 <select id="currency" class="bg-gray-50 border-solid border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
   <option value="dh">MAD</option>
   <option value="EUR">EURO</option>
@@ -186,19 +186,15 @@
             </label>
           </div>
           <div class="box">
-
-            <input id="startAge" type="text"
+            <input id="startAge" value="20" name="startAge" type="text"
             class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg shadow-inner
-
             outline-none focus:border-indigo-500"
             placeholder="25"/>
-
-          
-
           </div>
           <div class="box">
             <input type="text"
             id="ageEnd"
+            value="25"
             class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg shadow-inner
 
             outline-none focus:border-indigo-500"
@@ -206,163 +202,46 @@
           </div>
           <div class="col-span-2 text-center">
 
-            <button type="button" id="submit" onclick="checkthis()" class="m-xl text-white w-64 bg-green-500 hover:bg-byad focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 text-alig">
+            <button type="button" id="btn"  onclick="afficherSalaire()"
+             class="m-xl text-white w-64
+              bg-green-500 hover:bg-byad focus:outline-none 
+              focus:ring-4 focus:ring-green-300 font-medium 
+              rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2
+               dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 text-alig">
               Calculate
             </button>
+
 <br />
-            <div  class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-              <strong id="error"  class="font-bold">Holy smokes!</strong>
-              <span id="error"  class="block sm:inline">Something seriously bad happened.</span>
-              <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-                <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+            <div  id="error" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+              <strong  class="font-bold"></strong>
+              <span id="error-message" class="block sm:inline"></span>
+              <span class="absolute top-0 bottom-0 right-0 px-4 py-3" onclick="hideError()">
+                <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <title>Close</title>
+                  <path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
               </span>
             </div>
+
+
+
+
+            <div  id="succes" class="bg-green-100 hidden  border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+              <strong  class="font-bold"></strong>
+              <span id="sucess-message" class="block sm:inline"></span>
+              <span class="absolute top-0 bottom-0 right-0 px-4 py-3" onclick="hidesucces()">
+                <svg class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <title>Close</title>
+                  <path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+              </span>
+            </div>
+
           </div>
         </div>
 
         </form>
-
       <!--Formulaire -->
-
-      
-
     </div>
   </div>
-
-  <!--
-  <div class="min-w-screen min-h-screen  flex  justify-center px-5 py-5">
-    <div class="text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden" style="max-width:1000px">
-      <div class="md:flex w-full bg-byad"> 
-        <div class=" md:block w-1/2 bg-indigo-500 py-10 px-10 items-center">
-          <object class="py-4" data="./assets/images/money_img.svg" width="250" height="250"> </object>
-          <label
-            class="mb-4 text-1xl font-extrabold text-secondary dark:text-white md:text-3xl lg:text-4xl text-center">
-            Time is money </label>
-
-  
-
-        </div>
-        <div class="w-full md:w-1/2 py-10 px-5 md:px-10">
-          <div class="text-center mb-10">
-            <p class="text-left text-limouni">Calculate the accumulated amount</p>
-            <p class="text-left  text-limouni">From saving</p>
-
-          </div>
-          <div>
-
-          
-
-            <div class="flex -mx-3 bg-title" >
-              <div class="w-1/2 px-3 mb-5">
-                <label for="" class="text-xs font-normal px-1">Your First Salary </label>
-                <div class="flex">
-                  <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center"><i
-                      class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                  <input type="text"
-                    class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg shadow-inner
-
-                    outline-none focus:border-indigo-500"
-                    placeholder="5000">
-                </div>
-              </div>
-              <div class="w-1/2 px-3 mb-5">
-                <label for="" class="text-xs font-normal px-1">Curency</label>
-                <div class="flex">
-                  <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i
-                      class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-
-                      <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown divider <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-
-                    
-                      <div id="dropdownDivider" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 110px, 0px);">
-                          <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
-                            <li>
-                              <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-                            </li>
-                            <li>
-                              <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-                            </li>
-                            <li>
-                              <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-                            </li>
-                          </ul>
-                          <div class="py-1">
-                            <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Separated link</a>
-                          </div>
-                      </div>
-                      
-                </div>
-              </div>
-            </div>
-
-            <div class="flex -mx-3">
-              <div class="w-1/2 px-3 mb-5">
-                <label for="" class="text-xs font-normal px-1">% of saving</label>
-                <div class="flex">
-                  <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
-
-                    <i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                  <input type="text"
-                    class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg  outline-none focus:border-indigo-500"
-                    placeholder="John">
-                </div>
-              </div>
-              <div class="w-1/2 px-3 mb-5">
-                <label for="" class="text-xs font-normal px-1">% of raise of salary</label>
-                <div class="flex">
-                  <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i
-                      class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                  <input type="email"
-                    class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
-                    placeholder="johnsmith@example.com">
-                </div>
-              </div>
-            </div>
-
-
-            <div class="flex -mx-3">
-              <div class="w-1/2 px-3 mb-5">
-                <label for="" class="text-xs font-normal px-1">Age of Start</label>
-                <div class="flex">
-                  <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i
-                      class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                      <input type="text"
-                      class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg shadow-inner
-  
-                      outline-none focus:border-indigo-500"
-                      placeholder="24">
-                </div>
-              </div>
-              <div class="w-1/2 px-3 mb-5">
-                <label for="" class="text-xs font-normal px-1">Age of end</label>
-                <div class="flex">
-                  <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i
-                      class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                      <input type="text"
-                      class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg shadow-inner
-  
-                      outline-none focus:border-indigo-500"
-                      placeholder="45">
-                </div>
-              </div>
-            </div>
-
-            <div class="flex -mx-3">
-              <div class="w-full px-3 mb-5">
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                  Button
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  </div>
--->
-
 </body>
 
 </html>
