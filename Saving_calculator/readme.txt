@@ -5,9 +5,11 @@ pour exécuter le projet il y a lieu :
 1- installer nodejs
 2- lancer les commandes : 
 
-    $cd Saving_calculator 
+    cd Saving_calculator 
+    npm install -D tailwindcss
+    npm i flowbite
+
     
-    $npm install -D tailwindcss
     
 ****************ENJOY****************
 ****************END****************** 
