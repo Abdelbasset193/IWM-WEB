@@ -1,26 +1,22 @@
 <!doctype html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./dist/style.css" rel="stylesheet">
   <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
   <script src="./src/code.js"></script>
-
   <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
-
-
 </head>
 
 <body class="h-screen bg-primary">
-  <h1 class="text-3xl text-title font-bold  text-center  mt-xl">
+  <h1 class="text-3xl text-title font-bold  text-center  mt-md">
     Savings Calculator
   </h1>
-  <h2 class="text-center text-title m-lg">
+  <h2 class="text-center text-title m-md">
     Estimate your investment growth over time
   </h2>
-  <div class="min-h-screen grid grid-cols-2 bg-byad  m-xl  rounded-3xl shadow-xl  overflow-hidden">
+  <div class="min-h-screen grid grid-cols-2 bg-byad  m-lg  rounded-3xl shadow-xl  overflow-hidden">
       <div class="flex flex-col justify-center items-center border-r-2	border-white	border-double">
         <div class="p-2"> <img  src="./assets/images/money_img.svg" width="400" height="400" alt="screenshot" ></div>
         <div class="p-2"> <label
@@ -31,57 +27,63 @@
     <div class="flex flex-col justify-center items-start">
 
 
-      <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400" onclick="balanceTab1()">
-        <li class="" id="tab-1">
-            <a href="#" class="inline-block py-3 px-4 text-white bg-green-500  active" aria-current="page">
-               
+      <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400" >
+        <li>
+            <a href="#" id="tab-1" onclick="balanceTab(1)" class="inline-block py-1 px-2 text-white bg-green-500  active" aria-current="page">
               <label for="" class="text-xs font-bold px-2">
                 Accumulated
                 </label>
 <br />
+<label for="" class="text-xs font-normal px-1">
+  Amount
+  </label><br>
               <label for="" class="text-xs font-normal px-1">
                 % of saving 
                 </label>
             </a>
         </li>
-        <li class="" id="tab-2">
-          <a href="#" class="inline-block py-3 px-4  hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white">
+        <li>
+          <a href="#"  id="tab-2" onclick="balanceTab(2)"  class="inline-block py-1 px-2  hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white">
               
               <label for="" class="text-xs font-bold px-2">
-                Accumulated
+                years needed 
                 </label>
 <br />
               <label for="" class="text-xs font-normal px-1">
-                % of saving 
+                to save
                 </label>
+                <br>
+                <label for="" class="text-xs font-normal px-1">
+                an amount
+                  </label>
             </a>
         </li>
-        <li class="" id="tab-3">
-            <a id="btn_tab3" class="inline-block py-3 px-4  hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white">
+        <li>
+          <a href="#"  id="tab-3" onclick="balanceTab(3)"  class="inline-block py-1 px-2 hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white">
+              
               <label for="" class="text-xs font-bold px-2">
-                Accumulated
+                Years needed
                 </label>
 <br />
-              <label for="" class="text-xs font-normal px-1">
-                % of saving 
-                </label>       
-             </a>
+<label for="" class="text-xs font-normal px-1">that can assure </label>  
+<br>
+<label for="" class="text-xs font-normal px-1">a good living </label>  
+
+            </a>
         </li>
 
 
     </ul>
 
     
-      <form class="p-xl shadow-inner outline-none"  id="form-id" name="form-exe1" onsubmit="validateform()" method="GET">
+      <form class="p-xl shadow-inner outline-none block"  id="form-ex1" name="form-exe1" method="GET">
         <div class="grid overflow-hidden grid-cols-10 gap-2 shadow-sm ">
-          <div class="col-span-2"> <div class="text-center mb-10">
-            <label class=" text-2xl text-center text-limouni">Calculate the accumulated amount</label>
+          <div class="col-span-2"> <div class="text-center mb-sm">
+            <label class=" text-1xl text-center text-limouni">Calculate the accumulated amount</label>
             <br/>
-            <label class="text-center text-2xl text-limouni">From saving : </label>
+            <label class="text-center text-1xl text-limouni">From saving : </label>
           </div>
         </div>
-
-  
           <div class="box">
             <label for="" class="text-xs font-normal px-1">Your First Salary </label>
           </div>
@@ -92,20 +94,17 @@
             <input id="salary" type="text" name="salary" value="10000"
             class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg shadow-inner outline-none focus:border-indigo-500"
             placeholder="5000"/>
-
           </div>
           <div class="box">
+  <select id="currency" class="bg-gray-50 border-solid border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+      <option value="dh">MAD</option>
+      <option value="EUR">EURO</option>
+      <option value="$">DOLLAR</option>
 
-<select id="currency" class="bg-gray-50 border-solid border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-  <option value="dh">MAD</option>
-  <option value="EUR">EURO</option>
-  <option value="$">DOLLAR</option>
 
-
-</select>
+  </select>
 
           </div>
-
           <div class="box">
             <label for="" class="text-xs font-normal px-1">
               % of saving 
@@ -119,7 +118,8 @@
 
           <div class="box">
             <!-- Dropdown menu -->
-<select id="percentage_saving" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+
+            <select id="percentage_saving" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
   <option value="5">5%</option>
   <option value="10">10%</option>
   <option value="15">15%</option>
@@ -140,6 +140,7 @@
   <option value="90">90%</option>
   <option value="95">95%</option>
   <option value="100">100%</option>
+
 
 
 
@@ -202,7 +203,7 @@
           </div>
           <div class="col-span-2 text-center">
 
-            <button type="button" id="btn"  onclick="afficherSalaire()"
+            <button type="button" id="btn"  onclick="savingCalculator(1)"
              class="m-xl text-white w-64
               bg-green-500 hover:bg-byad focus:outline-none 
               focus:ring-4 focus:ring-green-300 font-medium 
@@ -239,6 +240,336 @@
         </div>
 
         </form>
+
+        <form class="p-xl shadow-inner outline-none hidden"  id="form-ex2" name="form-exe2" method="GET">
+          <div class="grid overflow-hidden grid-cols-10 gap-2 shadow-sm ">
+            <div class="col-span-2"> <div class="text-center mb-sm">
+              <label class=" text-1xl text-center text-limouni">calculate the number of years  needed </label>
+              <br/>
+              <label class="text-center text-1xl text-limouni">to save an Amount  </label>
+            </div>
+          </div>
+            <div class="box">
+              <label for="" class="text-xs font-normal px-1">Your First Salary </label>
+            </div>
+            <div class="box">
+              <label for="" class="text-xs font-normal px-1">Currency </label>
+            </div>
+            <div class="box">
+              <input id="salary" type="text" name="salary" value="10000"
+              class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg shadow-inner outline-none focus:border-indigo-500"
+              placeholder="5000"/>
+            </div>
+            <div class="box">
+    <select id="currency" class="bg-gray-50 border-solid border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <option value="dh">MAD</option>
+        <option value="EUR">EURO</option>
+        <option value="$">DOLLAR</option>
+  
+  
+    </select>
+  
+            </div>
+            <div class="box">
+              <label for="" class="text-xs font-normal px-1">
+                % of saving 
+                </label>
+            </div>
+            <div class="box">
+              <label for="" class="text-xs font-normal px-1">
+                % of raise of salary
+              </label>
+            </div>
+  
+            <div class="box">
+              <!-- Dropdown menu -->
+  
+              <select id="percentage_saving" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    <option value="5">5%</option>
+    <option value="10">10%</option>
+    <option value="15">15%</option>
+    <option value="20">20%</option>
+    <option value="25">25%</option>
+    <option value="30">30%</option>
+    <option value="35">35%</option>
+    <option value="40">40%</option>
+    <option value="45">45%</option>
+    <option value="50">50%</option>
+    <option value="55">55%</option>
+    <option value="60">60%</option>
+    <option value="65">65%</option>
+    <option value="70">70%</option>
+    <option value="75">75%</option>
+    <option value="80">80%</option>
+    <option value="85">85%</option>
+    <option value="90">90%</option>
+    <option value="95">95%</option>
+    <option value="100">100%</option>
+  
+  
+  
+  
+  </select>
+            </div>
+            <div class="box">
+              <!-- Dropdown menu -->
+  <select id="percentage_raise" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    <option value="5">5%</option>
+    <option value="10">10%</option>
+    <option value="15">15%</option>
+    <option value="20">20%</option>
+    <option value="25">25%</option>
+    <option value="30">30%</option>
+    <option value="35">35%</option>
+    <option value="40">40%</option>
+    <option value="45">45%</option>
+    <option value="50">50%</option>
+    <option value="55">55%</option>
+    <option value="60">60%</option>
+    <option value="65">65%</option>
+    <option value="70">70%</option>
+    <option value="75">75%</option>
+    <option value="80">80%</option>
+    <option value="85">85%</option>
+    <option value="90">90%</option>
+    <option value="95">95%</option>
+    <option value="100">100%</option>
+  
+  
+  
+  </select>
+            </div>
+  
+            <div class="box">
+  
+              <label for="" class="text-xs font-normal px-1">
+                Age of Start
+              </label>
+            </div>
+            <div class="box">
+              <label for="" class="text-xs font-normal px-1">
+                Age of End
+              </label>
+            </div>
+            <div class="box">
+              <input id="startAge" value="20" name="startAge" type="text"
+              class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg shadow-inner
+              outline-none focus:border-indigo-500"
+              placeholder="25"/>
+            </div>
+            <div class="box">
+              <input type="text"
+              id="ageEnd"
+              value="25"
+              class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg shadow-inner
+  
+              outline-none focus:border-indigo-500"
+              placeholder="45"/>
+            </div>
+            <div class="col-span-2 text-center">
+  
+              <button type="button" id="btn"  onclick="afficherSalaire()"
+               class="m-xl text-white w-64
+                bg-green-500 hover:bg-byad focus:outline-none 
+                focus:ring-4 focus:ring-green-300 font-medium 
+                rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2
+                 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 text-alig">
+                Calculate
+              </button>
+  
+  <br />
+              <div  id="error" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                <strong  class="font-bold"></strong>
+                <span id="error-message" class="block sm:inline"></span>
+                <span class="absolute top-0 bottom-0 right-0 px-4 py-3" onclick="hideError()">
+                  <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <title>Close</title>
+                    <path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+                </span>
+              </div>
+  
+  
+  
+  
+              <div  id="succes" class="bg-green-100 hidden  border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                <strong  class="font-bold"></strong>
+                <span id="sucess-message" class="block sm:inline"></span>
+                <span class="absolute top-0 bottom-0 right-0 px-4 py-3" onclick="hidesucces()">
+                  <svg class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <title>Close</title>
+                    <path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+                </span>
+              </div>
+  
+            </div>
+          </div>
+  
+          </form>
+
+          <form class="p-xl shadow-inner outline-none hidden"  id="form-ex3" name="form-exe3" method="GET">
+            <div class="grid overflow-hidden grid-cols-10 gap-2 shadow-sm ">
+              <div class="col-span-2"> <div class="text-center mb-sm">
+                <label class=" text-1xl text-center text-limouni">  the number of years that can assure a good living </label>
+                <br/>
+                <label class="text-center text-1xl text-limouni"> from the saved amount.</label>
+              </div>
+            </div>
+              <div class="box">
+                <label for="" class="text-xs font-normal px-1">Your First Salary </label>
+              </div>
+              <div class="box">
+                <label for="" class="text-xs font-normal px-1">Currency </label>
+              </div>
+              <div class="box">
+                <input id="salary" type="text" name="salary" value="10000"
+                class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg shadow-inner outline-none focus:border-indigo-500"
+                placeholder="5000"/>
+              </div>
+              <div class="box">
+      <select id="currency" class="bg-gray-50 border-solid border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+          <option value="dh">MAD</option>
+          <option value="EUR">EURO</option>
+          <option value="$">DOLLAR</option>
+    
+    
+      </select>
+    
+              </div>
+              <div class="box">
+                <label for="" class="text-xs font-normal px-1">
+                  % of saving 
+                  </label>
+              </div>
+              <div class="box">
+                <label for="" class="text-xs font-normal px-1">
+                  % of raise of salary
+                </label>
+              </div>
+    
+              <div class="box">
+                <!-- Dropdown menu -->
+    
+                <select id="percentage_saving" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+      <option value="5">5%</option>
+      <option value="10">10%</option>
+      <option value="15">15%</option>
+      <option value="20">20%</option>
+      <option value="25">25%</option>
+      <option value="30">30%</option>
+      <option value="35">35%</option>
+      <option value="40">40%</option>
+      <option value="45">45%</option>
+      <option value="50">50%</option>
+      <option value="55">55%</option>
+      <option value="60">60%</option>
+      <option value="65">65%</option>
+      <option value="70">70%</option>
+      <option value="75">75%</option>
+      <option value="80">80%</option>
+      <option value="85">85%</option>
+      <option value="90">90%</option>
+      <option value="95">95%</option>
+      <option value="100">100%</option>
+    
+    
+    
+    
+    </select>
+              </div>
+              <div class="box">
+                <!-- Dropdown menu -->
+    <select id="percentage_raise" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+      <option value="5">5%</option>
+      <option value="10">10%</option>
+      <option value="15">15%</option>
+      <option value="20">20%</option>
+      <option value="25">25%</option>
+      <option value="30">30%</option>
+      <option value="35">35%</option>
+      <option value="40">40%</option>
+      <option value="45">45%</option>
+      <option value="50">50%</option>
+      <option value="55">55%</option>
+      <option value="60">60%</option>
+      <option value="65">65%</option>
+      <option value="70">70%</option>
+      <option value="75">75%</option>
+      <option value="80">80%</option>
+      <option value="85">85%</option>
+      <option value="90">90%</option>
+      <option value="95">95%</option>
+      <option value="100">100%</option>
+    
+    
+    
+    </select>
+              </div>
+    
+              <div class="box">
+    
+                <label for="" class="text-xs font-normal px-1">
+                  Age of Start
+                </label>
+              </div>
+              <div class="box">
+                <label for="" class="text-xs font-normal px-1">
+                  Age of End
+                </label>
+              </div>
+              <div class="box">
+                <input id="startAge" value="20" name="startAge" type="text"
+                class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg shadow-inner
+                outline-none focus:border-indigo-500"
+                placeholder="25"/>
+              </div>
+              <div class="box">
+                <input type="text"
+                id="ageEnd"
+                value="25"
+                class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg shadow-inner
+    
+                outline-none focus:border-indigo-500"
+                placeholder="45"/>
+              </div>
+              <div class="col-span-2 text-center">
+    
+                <button type="button" id="btn"  onclick="afficherSalaire()"
+                 class="m-xl text-white w-64
+                  bg-green-500 hover:bg-byad focus:outline-none 
+                  focus:ring-4 focus:ring-green-300 font-medium 
+                  rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2
+                   dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 text-alig">
+                  Calculate
+                </button>
+    
+    <br />
+                <div  id="error" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                  <strong  class="font-bold"></strong>
+                  <span id="error-message" class="block sm:inline"></span>
+                  <span class="absolute top-0 bottom-0 right-0 px-4 py-3" onclick="hideError()">
+                    <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                      <title>Close</title>
+                      <path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+                  </span>
+                </div>
+    
+    
+    
+    
+                <div  id="succes" class="bg-green-100 hidden  border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                  <strong  class="font-bold"></strong>
+                  <span id="sucess-message" class="block sm:inline"></span>
+                  <span class="absolute top-0 bottom-0 right-0 px-4 py-3" onclick="hidesucces()">
+                    <svg class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                      <title>Close</title>
+                      <path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+                  </span>
+                </div>
+    
+              </div>
+            </div>
+    
+            </form>
       <!--Formulaire -->
     </div>
   </div>

@@ -1,31 +1,27 @@
 
 
-function afficherSalaire()
+function savingCalculator(x_code)
  {
-    validateform();
+    if (parseInt(x_code) ==1)
+    {
+    validateform(1);
     accumulatedAmountFromSaving();
+    }
+    
+    if (parseInt(x_code)==2)
+    {
+        validateform(2);
+        accumulatedAmountFromSaving();
+    }
+    if (parseInt(x_code)==3)
+    {
+        validateform(1);
+        accumulatedAmountFromSaving();
+    }
  }
 
  function accumulatedAmountFromSaving()
  {
-//     Start
-//     input "give me the your actual salary";  salary 
-//      input "give me the your % of saving ";   pSaving 
-//     input "give me  your start age ";   ageStart 
-//     input "give me  your en of age ";   ageEnd 
-//     input "give me  your % of raised salary ";   raisedSalary 
-// nbrOfYears = ageEnd - ageStart ; 
-// saving = 0 ; 
-// for (i=1 ; i<nbrOfYears ; i++ )
-// {
-// if (nbrOfYears=1)
-// {
-//   saving = (salary * 12 * pSaving ) ; 
-// }
-// else
-// {
-//   saving = salary * 12 * raisedSalary  * pSaving  ; 
-// }
 
 var c = document.getElementById("currency")
 var salary = parseFloat(document.getElementById("salary").value);
@@ -62,17 +58,13 @@ console.log("Final : saving : "+ saving);
 
  }
 
- function getOptions() {
-    var e = document.getElementById("percentage_saving");
-    var value = e.value;
-    var text = e.options[e.selectedIndex].text;
-    console.log(value +"_" + text);
- }
 
- function validateform()
+
+ function validateform(x_code)
  {
-    //validating salary null value
-    var x_salary = document.getElementById("salary").value; 
+    if (parseInt(x_code==1))
+    {
+         var x_salary = document.getElementById("salary").value; 
    // var x = document.getElementById("error");
     if (x_salary==null || x_salary=="")
     {  
@@ -133,8 +125,18 @@ console.log("Final : saving : "+ saving);
         vieuError();
          return false;  
        }
-      
+       return;
+    }
 
+    if (parseInt(x_code==2))
+    {
+        return;
+    }
+
+    if (parseInt(x_code==3))
+    {
+        return;
+    }    
  }
 
  function vieuError() {
@@ -159,17 +161,81 @@ function showsucces() {
     box.style.display = 'none'; 
 }
 
-function balanceTab1() 
+//
+function balanceTab(x_code) 
 {
-   var tab1 = document.getElementById("tab-1");
-   var btn_tab3 = document.getElementById("btn_tab3");
-   tab1.style.backgroundColor = "white";
-}
-function balanceTab2() 
-{
-   var tab2 = document.getElementById("tab-2");
-}
-function balanceTab3() 
-{
-   var tab3 = document.getElementById("tab-3");
+    if (parseInt(x_code)==1)
+    {
+        var tab1 = document.getElementById("tab-1");
+        tab1.style.backgroundColor = "rgb(13, 159, 110)";//green
+        tab1.style.color = "white";
+     
+        var tab2 = document.getElementById("tab-2");
+        tab2.style.backgroundColor = "white";
+        tab2.style.color = "rgb(107 114 128";
+     
+        var tab3 = document.getElementById("tab-3");
+        tab3.style.backgroundColor = "white";
+        tab3.style.color = "rgb(107 114 128";
+     
+        //hide form 2 and 3 and show 1
+        var form_exec1 = document.getElementById("form-ex1");
+         form_exec1.style.display="block";
+     
+         var form_exec2 = document.getElementById("form-ex2");
+         form_exec2.style.display="none";
+     
+         var form_exec3 = document.getElementById("form-ex3");
+         form_exec3.style.display="none";
+         return;
+    }
+    if (parseInt(x_code)==2)
+    {
+        var tab2 = document.getElementById("tab-2");
+        tab2.style.backgroundColor = "rgb(13, 159, 110)";//gree
+        tab2.style.color = "white";
+    
+        var tab1 = document.getElementById("tab-1");
+        tab1.style.backgroundColor = "white";
+        tab1.style.color = "rgb(107 114 128";
+    
+        var tab3 = document.getElementById("tab-3");
+        tab3.style.backgroundColor = "white";
+        tab3.style.color = "rgb(107 114 128";
+    
+        //hide form 1 and 3 and show 2
+    
+        var form_exec1 = document.getElementById("form-ex1");
+        form_exec1.style.display="none";
+    
+        var form_exec2 = document.getElementById("form-ex2");
+        form_exec2.style.display="block";
+    
+        var form_exec3 = document.getElementById("form-ex3");
+        form_exec3.style.display="none";
+    }
+    if (parseInt(x_code)==3)
+    {
+        var tab3 = document.getElementById("tab-3");
+        tab3.style.backgroundColor = "rgb(13, 159, 110)";
+        tab3.style.color = "white";
+    
+        var tab1 = document.getElementById("tab-1");
+        tab1.style.backgroundColor = "white";
+        tab1.style.color = "rgb(107 114 128";
+     
+        var tab2 = document.getElementById("tab-2");
+        tab2.style.backgroundColor = "white";
+        tab2.style.color = "rgb(107 114 128";
+    
+        //hide form 1 and 2  and show 3 
+        var form_exec1 = document.getElementById("form-ex1");
+        form_exec1.style.display="none";
+    
+        var form_exec2 = document.getElementById("form-ex2");
+        form_exec2.style.display="none";
+    
+        var form_exec3 = document.getElementById("form-ex3");
+        form_exec3.style.display="block";
+    }
 }
